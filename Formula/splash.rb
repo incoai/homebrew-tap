@@ -28,6 +28,18 @@ class Splash < Formula
     bash_completion.install_symlink libexec/"install/completions/splash.bash" => "splash"
   end
 
+  def caveats
+    <<~CAVEAT
+      Serve a model:
+        splash serve --model incoai/Qwen3.8-27B-Splash
+
+      If `splash serve --model <TAB>` offers nothing, zsh cannot see Homebrew's
+      completions. Add this to ~/.zshrc, before compinit runs:
+        FPATH="#{HOMEBREW_PREFIX}/share/zsh/site-functions:$FPATH"
+      then: rm -f ~/.zcompdump*; exec zsh
+    CAVEAT
+  end
+
   test do
     assert_match "serve", shell_output("#{bin}/splash --help")
   end
