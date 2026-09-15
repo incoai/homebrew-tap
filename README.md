@@ -10,26 +10,28 @@ does and how it was measured.
 
 ## Status
 
-This tap is **not yet functional**. `Formula/splash.rb` is scaffolding — the
-`version`, `url` and `sha256` fields are placeholders, because `incoai/splash`
-currently has no tags and no releases to point at.
+Not yet installable. `Formula/splash.rb` carries placeholder `url`, `version`
+and `sha256` values, because `incoai/splash` has no releases to point at.
+
+## The formula is generated
+
+Do not hand-edit `Formula/splash.rb`. `dev/tools/package.py` in `incoai/splash`
+builds the release archive and writes the matching formula to `dist/splash.rb`;
+releasing means copying that file over this one. Hand edits will be silently
+overwritten at the next release.
 
 ## Release checklist
 
-Before `brew install incoai/tap/splash` will work:
-
-1. Tag a release on `incoai/splash` and attach a `splash-darwin-arm64.tar.gz`
-   built for Apple GPU family 9+ (M3 and newer).
-2. Decide whether the tarball ships the shell completions from
-   `install/completions`, and uncomment the matching lines in the formula.
-3. Fill in `version`, `url` and `sha256` from the release asset.
-4. Make `incoai/splash` public — Homebrew must be able to fetch the asset
-   anonymously.
+1. In `incoai/splash`, run `dev/tools/package.py` to build the archive and
+   `dist/splash.rb`.
+2. Publish the archive as a release asset on `incoai/splash`.
+3. Copy `dist/splash.rb` to `Formula/splash.rb` here.
+4. Make `incoai/splash` public. Homebrew fetches release assets anonymously, so
+   this has to happen before the formula can work for anyone.
 5. Make this tap public.
-6. Verify end to end on a clean machine:
-   `brew tap incoai/tap && brew install splash && splash --version`
+6. On a clean machine: `brew tap incoai/tap && brew install splash && splash --version`.
 7. `brew audit --strict --online incoai/tap/splash` before announcing.
 
-Note that the model package the formula's caveats mention
-(`incoai/Qwen3.8-27B-Splash`) is currently published as
-`incoai-internal/Qwen3.8-27B-Splash`; these need to agree before launch.
+Shell completion needs no extra step — the generated formula symlinks `_splash`
+and `splash.bash` out of `libexec`, and because the whole tree is installed
+there, the `models` helper still finds `official-models.txt` beside it.
