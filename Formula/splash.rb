@@ -8,7 +8,7 @@ class SplashMacOSRequirement < Requirement
 end
 
 class Splash < Formula
-  desc "Local Qwen + DFlash server for Apple Silicon"
+  desc "Local inference engine for Apple silicon, built around the model"
   homepage "https://github.com/incoai/splash"
   url "https://github.com/incoai/splash/releases/download/1.0/splash-1.0-arm64-macos26.tar.gz"
   version "1.0"
