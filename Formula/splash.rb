@@ -11,7 +11,6 @@ class Splash < Formula
   desc "Local inference engine for Apple silicon, built around the model"
   homepage "https://github.com/incoai/splash"
   url "https://github.com/incoai/splash/releases/download/1.0/splash-1.0-arm64-macos26.tar.gz"
-  version "1.0"
   sha256 "0a4d795518d001564889f348c75723ecd0a14067d8d564a0aec17c4a3898999b"
   license "Apache-2.0"
 
