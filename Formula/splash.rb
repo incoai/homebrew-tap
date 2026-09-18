@@ -1,22 +1,30 @@
-# GENERATED — do not hand-edit.
-#
-# `dev/tools/package.py` in incoai/splash emits this file as dist/splash.rb
-# when it builds a release archive. Publishing a release means copying that
-# output over this one. The three placeholders below are the only difference
-# between this and a real release: url, version and sha256.
+class SplashMacOSRequirement < Requirement
+  fatal true
+  satisfy(build_env: false) { OS.mac? && MacOS.full_version >= "26.4" }
+
+  def message
+    "Splash requires macOS 26.4 or newer."
+  end
+end
+
 class Splash < Formula
   desc "Local Qwen + DFlash server for Apple Silicon"
   homepage "https://github.com/incoai/splash"
-  url "https://github.com/incoai/splash/releases/download/v0.0.0/splash-0.0.0.tar.gz"
-  version "0.0.0"
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  url "https://github.com/incoai/splash/releases/download/1.0/splash-1.0-arm64-macos26.tar.gz"
+  version "1.0"
+  sha256 "2d43f8afab6b54d81c3346ce9dcccda670f0fec211ff28281ed7b9e2d25cc3bb"
   license "Apache-2.0"
+
+  bottle do
+    root_url "https://github.com/incoai/splash/releases/download/1.0"
+    sha256 cellar: :any, arm64_tahoe: "7e5878947e53f32fd1aa773edac300ec52b9fb49763ed87a0f5bd6424a65f7e0"
+  end
 
   depends_on arch: :arm64
   depends_on macos: :tahoe
+  depends_on SplashMacOSRequirement
 
   def install
-    odie "Splash requires macOS 26.4 or newer." if MacOS.full_version < "26.4"
     libexec.install Dir["*"]
     (bin/"splash").write <<~SH
       #!/bin/sh
