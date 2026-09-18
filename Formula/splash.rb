@@ -12,12 +12,12 @@ class Splash < Formula
   homepage "https://github.com/incoai/splash"
   url "https://github.com/incoai/splash/releases/download/1.0/splash-1.0-arm64-macos26.tar.gz"
   version "1.0"
-  sha256 "2d43f8afab6b54d81c3346ce9dcccda670f0fec211ff28281ed7b9e2d25cc3bb"
+  sha256 "0a4d795518d001564889f348c75723ecd0a14067d8d564a0aec17c4a3898999b"
   license "Apache-2.0"
 
   bottle do
     root_url "https://github.com/incoai/splash/releases/download/1.0"
-    sha256 cellar: :any, arm64_tahoe: "7e5878947e53f32fd1aa773edac300ec52b9fb49763ed87a0f5bd6424a65f7e0"
+    sha256 cellar: :any, arm64_tahoe: "b8ccef6c41ed9061968a74209f9851eab53d27fcc1d2fe68e491d7a9b45db145"
   end
 
   depends_on arch: :arm64
