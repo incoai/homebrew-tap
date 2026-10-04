@@ -10,13 +10,13 @@ end
 class Splash < Formula
   desc "Local inference engine for Apple silicon, built around the model"
   homepage "https://github.com/incoai/splash"
-  url "https://github.com/incoai/splash/releases/download/1.1.0/splash-1.1.0-arm64-macos26.tar.gz"
-  sha256 "255be83f404b1e31e4d98a863ccce05004d348fb6662c68afced4ff992402437"
+  url "https://github.com/incoai/splash/releases/download/1.2.0/splash-1.2.0-arm64-macos26.tar.gz"
+  sha256 "b774e28ee1fb5f3526bf65f6a17cfc08b97ff90308eebe3ed00eedb652f85234"
   license "Apache-2.0"
 
   bottle do
-    root_url "https://github.com/incoai/splash/releases/download/1.1.0"
-    sha256 cellar: :any, arm64_tahoe: "77529f56363bc351cec3f938882bc3c342c309db13c35bb7e368c39f163b0325"
+    root_url "https://github.com/incoai/splash/releases/download/1.2.0"
+    sha256 cellar: :any, arm64_tahoe: "2d8ca74e4c558a77cbd4dc81a8003fd4dbb0eff1494c895dcdfadb34e5296a83"
   end
 
   depends_on arch: :arm64
@@ -33,6 +33,7 @@ class Splash < Formula
     chmod 0755, bin/"splash"
     zsh_completion.install_symlink libexec/"install/completions/_splash"
     bash_completion.install_symlink libexec/"install/completions/splash.bash" => "splash"
+    fish_completion.install_symlink libexec/"install/completions/splash.fish"
   end
 
   def caveats
