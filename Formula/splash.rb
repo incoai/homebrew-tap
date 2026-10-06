@@ -10,13 +10,13 @@ end
 class Splash < Formula
   desc "Local inference engine for Apple silicon, built around the model"
   homepage "https://github.com/incoai/splash"
-  url "https://github.com/incoai/splash/releases/download/1.2.1/splash-1.2.1-arm64-macos26.tar.gz"
-  sha256 "523cd05a868f6919811c228d561554416dc0866e6dad0c2caa5e6b8ec9f6ca2c"
+  url "https://github.com/incoai/splash/releases/download/1.3.0/splash-1.3.0-arm64-macos26.tar.gz"
+  sha256 "9cbf463598367c912ee17eaba27cba4be3d324d688541f7ed5106ed9b2bd691d"
   license "Apache-2.0"
 
   bottle do
-    root_url "https://github.com/incoai/splash/releases/download/1.2.1"
-    sha256 cellar: :any, arm64_tahoe: "231dacb77bb71a1ab6ee43033f356f0ca001b916d997708384d0a606fa50d9d0"
+    root_url "https://github.com/incoai/splash/releases/download/1.3.0"
+    sha256 cellar: :any, arm64_tahoe: "0cab61db90a3df3af296cec20db0cd243e2ee21b17b24d3b14f4edaf05d4e64b"
   end
 
   depends_on arch: :arm64
@@ -39,7 +39,7 @@ class Splash < Formula
   def caveats
     <<~CAVEAT
       Serve a model:
-        splash serve --model mlx-community/Qwen3.8-27B-4bit
+        splash serve --model unsloth/Qwen3.8-27B-GGUF:UD-Q4_K_M
     CAVEAT
   end
 
