@@ -1,6 +1,6 @@
 # Inco AI Homebrew tap
 
-Formulae for Inco AI's open-source tools.
+Formulae and casks for Inco AI's open-source tools.
 
 ## Install
 
@@ -23,5 +23,15 @@ Upgrade with `brew upgrade <formula>` and remove with `brew uninstall <formula>`
 | --- | --- | --- |
 | `splash` | Local inference engine for Apple silicon, built around the model. [Repository](https://github.com/incoai/splash) · [Launch post](https://inco.ai/blog/splash/) | M3 or newer Mac, macOS 26.4 or later, 36 GB of unified memory |
 
+## Casks
+
+| Cask | What it is | Requirements |
+| --- | --- | --- |
+| `splash-app` | The Splash desktop app. [Repository](https://github.com/incoai/splash) | M3 or newer Mac, macOS 26.4 or later |
+
+```sh
+brew install --cask incoai/tap/splash-app
+```
+
 Report problems with a tool in its own repository. This tap only carries the
-formulae.
+formulae and casks.
