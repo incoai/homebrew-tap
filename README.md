@@ -22,7 +22,6 @@ Upgrade with `brew upgrade <formula>` and remove with `brew uninstall <formula>`
 | Formula | What it is | Requirements |
 | --- | --- | --- |
 | `splash` | Local inference engine for Apple silicon, built around the model. [Repository](https://github.com/incoai/splash) · [Launch post](https://inco.ai/blog/splash/) | M3 or newer Mac, macOS 26.4 or later, 36 GB of unified memory |
-| `splash-omni` | Local speech engine for Apple silicon: text to speech, transcription and voice chat. [Repository](https://github.com/incoai/splash-omni) | M3 or newer Mac, macOS 26.4 or later |
 
 ## Casks
 
