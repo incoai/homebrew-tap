@@ -21,7 +21,7 @@ Upgrade with `brew upgrade <formula>` and remove with `brew uninstall <formula>`
 
 | Formula | What it is | Requirements |
 | --- | --- | --- |
-| `splash` | Local inference engine for Apple silicon, built around the model. [Repository](https://github.com/incoai/splash) · [Launch post](https://inco.ai/blog/splash/) | M3 or newer Mac, macOS 26.4 or later, 36 GB of unified memory |
+| `splash` | Local inference engine for Apple silicon, built around the model. [Repository](https://github.com/incoai/splash) · [Launch post](https://inco.ai/blog/splash/) | M3 or newer Mac, macOS 26.4 or later, 24 GB or more of unified memory (model-dependent) |
 
 ## Casks
 
