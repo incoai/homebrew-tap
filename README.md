@@ -33,5 +33,28 @@ Upgrade with `brew upgrade <formula>` and remove with `brew uninstall <formula>`
 brew install --cask incoai/tap/splash-app
 ```
 
+## Splash service
+
+For existing installations, update the tap and run `brew reinstall splash` first.
+
+Run without `sudo`; stop any foreground Splash server first:
+
+```sh
+brew services start splash
+brew services stop splash
+```
+
+Defaults below; to override, create `$(brew --prefix)/etc/splash-service.conf`:
+
+```sh
+SPLASH_MODEL=incoai/Qwen3.8-27B-Splash
+SPLASH_PORT=8000
+```
+
+Apply changes with `brew services restart splash`. The first start downloads
+the model if needed.
+
+Logs: `$(brew --prefix)/var/log/splash.log`.
+
 Report problems with a tool in its own repository. This tap only carries the
 formulae and casks.

@@ -43,6 +43,21 @@ class Splash < Formula
     CAVEAT
   end
 
+  service do
+    run ["/bin/sh", "-c", <<~SH]
+      set -eu
+      SPLASH_MODEL=incoai/Qwen3.8-27B-Splash
+      SPLASH_PORT=8000
+      if [ -f "#{etc}/splash-service.conf" ]; then
+        . "#{etc}/splash-service.conf"
+      fi
+      exec "#{opt_bin}/splash" serve --model "$SPLASH_MODEL" --port "$SPLASH_PORT" "$@"
+    SH
+    keep_alive true
+    log_path var/"log/splash.log"
+    error_log_path var/"log/splash.log"
+  end
+
   test do
     assert_match version.to_s, shell_output("#{bin}/splash --version")
     assert_match "serve", shell_output("#{bin}/splash --help")
