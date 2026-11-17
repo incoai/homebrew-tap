@@ -10,13 +10,13 @@ end
 class Splash < Formula
   desc "Local inference engine for Apple silicon, built around the model"
   homepage "https://github.com/incoai/splash"
-  url "https://github.com/incoai/splash/releases/download/1.6.1/splash-1.6.1-arm64-macos26.tar.gz"
-  sha256 "0ed408a781f951a13ff58bed95c9e8c1d1dc67ab9d649fcaf365972b6720ce6c"
+  url "https://github.com/incoai/splash/releases/download/1.7.0/splash-1.7.0-arm64-macos26.tar.gz"
+  sha256 "5cbb1a6708443383c08262bca7c3d8261109caf74238fdafca063435074b586d"
   license "Apache-2.0"
 
   bottle do
-    root_url "https://github.com/incoai/splash/releases/download/1.6.1"
-    sha256 cellar: :any, arm64_tahoe: "6a01f67e5a6c41c83f8fd08372cbd3ad6d3a40d660389bf98846378b86c8d3db"
+    root_url "https://github.com/incoai/splash/releases/download/1.7.0"
+    sha256 cellar: :any, arm64_tahoe: "f86e7857146930174df0ccf72c1ac42e5c93eaa225f00715b10f40b678cf038c"
   end
 
   depends_on arch: :arm64
