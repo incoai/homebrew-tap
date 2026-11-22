@@ -1,6 +1,6 @@
 cask "splash-app" do
-  version "1.7.0"
-  sha256 "75e047f486a0e899051b9a597155d105dcd9314e9b7515c899602fcb3bf1af68"
+  version "1.7.1"
+  sha256 "3e502bbc30116b913c1736e9d6fc7691941c97094130e134054ba6204f004c1d"
 
   url "https://github.com/incoai/splash/releases/download/#{version}/Splash-#{version}.dmg"
   name "Splash"
